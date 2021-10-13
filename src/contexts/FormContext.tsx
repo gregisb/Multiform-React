@@ -7,7 +7,12 @@ type State = {
     level: 0 | 1;
     email: string;
     github: string;
-}
+};
+
+type Action = {
+    type: FormActions;
+    payload: any;
+ }
 
 const initialData: State = {
     currentStep: 0,
@@ -30,7 +35,7 @@ enum FormActions {
     setGithub
 }
 
-const FormReducer = (state, action) => {
+const FormReducer = (state: State, action: Action) => {
     switch(action.type) {
         case FormActions.setCurrentStep:
             return {...state, currentStep: action.payload}
