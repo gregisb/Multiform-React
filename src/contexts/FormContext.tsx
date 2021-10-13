@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, ReactNode, useContext, useReducer } from 'react';
 
 
 type State = { 
@@ -17,6 +17,10 @@ type Action = {
 type ContextType = {
     state: State;
     dispatch: (action: Action) => void
+};
+
+type FormProviderProps = { 
+    children: ReactNode
 }
 
 
@@ -60,7 +64,7 @@ const FormReducer = (state: State, action: Action) => {
 
 
 //Provider
-const FormProvider = ({children}) => {
+const FormProvider = ({children}: FormProviderProps) => {
 
     const [state, dispatch] = useReducer(FormReducer, initialData);
     const value = { state, dispatch }
