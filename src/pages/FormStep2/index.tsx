@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import * as C from './styles';
 
@@ -13,10 +13,15 @@ export const FormStep2 = () => {
     const { state, dispatch } = useForm();
 
     useEffect(() => {
-        dispatch({
-            type: FormActions.setCurrentStep,
-            payload: 2
-        })
+        if(state.name === '') {
+            history.push('/');
+        } else {
+
+            dispatch({
+                type: FormActions.setCurrentStep,
+                payload: 2
+            });
+        }
     }, []);
 
 
@@ -28,14 +33,21 @@ export const FormStep2 = () => {
         }
     };
 
+    const setLevel = (level: number) => {
+        dispatch({
+            type: FormActions.setLevel,
+            payload: level
+        })
+    }
+
     
 
     return (
         <Theme>
             <C.Container>
                 <p>Passo 2/3</p>
-                <h1>Vamos começar com o seu nome</h1>
-                <p>Preencha o campo abaixo com o seu nome completo.</p>
+                <h1>{state.name}, qual opção melhor descreve o seu nível?</h1>
+                <p>Escolha a opção que melhor condiz com seu estado profissional atualmente.</p>
 
                 <hr />
 
@@ -43,14 +55,20 @@ export const FormStep2 = () => {
                         title="Sou iniciante"
                         description="Comecei a programa a menos de dois anos."
                         icon="🥳"
+                        selected={state.level === 0}
+                        onClick={() => setLevel(0)}
                  />
 
                  <SelectOption
                         title="Sou programador"
                         description="Já programo a dois anos ou mais."
                         icon="😎"
-                 />
+                        selected={state.level === 1}
+                        onClick={() => setLevel(1)}
 
+
+                 />
+                <Link to='/' className='backButton'>Voltar</Link>
                 <button onClick={handleNextStep}>Próximo</button>
             </C.Container>
         </Theme>

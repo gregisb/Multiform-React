@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{ selected: boolean }>`
     display: flex;
-    border: 2px solid #16195c;
+    border: 2px solid ${props => props.selected ? '#25cd89' : '#16195c'};
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 15px;
@@ -39,5 +39,5 @@ export const Title = styled.div`
 
 export const Description = styled.div`
     font-size: 14px;
-    color: #B8B8D4
+    color: #B8B8D4;
 `;
