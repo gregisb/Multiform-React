@@ -27,7 +27,7 @@ export const FormStep2 = () => {
 
     const handleNextStep= () => {
         if(state.name !== '') {
-            history.push('/step2')
+            history.push('/step3')
         } else {
             alert('Preencha os dados!')
         }
