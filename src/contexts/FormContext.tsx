@@ -12,7 +12,13 @@ type State = {
 type Action = {
     type: FormActions;
     payload: any;
- }
+};
+
+type ContextType = {
+    state: State;
+    dispatch: (action: Action) => void
+}
+
 
 const initialData: State = {
     currentStep: 0,
@@ -23,7 +29,7 @@ const initialData: State = {
 }
 
 //Context
-const FormContext = createContext(undefined);
+const FormContext = createContext<ContextType | undefined>(undefined);
 
 //Reducer
 
