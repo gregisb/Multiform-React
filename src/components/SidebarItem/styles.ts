@@ -9,11 +9,22 @@ export const Container = styled.div`
         align-items: center;
         text-decoration: none;
     }
+
+    @media only screen and (max-width: 600px) {
+        margin: 10px 0;
+
+        a {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
 `;
 
 export const Info = styled.div`
     flex: 1;
     margin-right: 20px;
+   
+    }
 `;
 
 export const Title = styled.div`

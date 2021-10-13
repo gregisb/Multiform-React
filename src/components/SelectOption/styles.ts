@@ -12,6 +12,12 @@ export const Container = styled.div<{ selected: boolean }>`
     &:hover {
         border: 2px solid #496459;
     }
+
+    @media only screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%
+    }
 `;
 
 export const Icon = styled.div`
@@ -23,6 +29,11 @@ export const Icon = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 25px;
+
+    @media only screen and (max-width: 600px) {
+        width: 30px;
+        height: 30px;
+    }
 `;
 
 export const Info = styled.div`

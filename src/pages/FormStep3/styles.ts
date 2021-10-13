@@ -58,4 +58,35 @@ export const Container = styled.div`
         padding: 20px 40px;
         color: #b8b8d4;
     }
+
+    @media only screen and (max-width: 600px) {
+        label {
+            font-zise: 12px;
+            display: block;
+            margin-bottom: 20px;
+    
+            input {
+                display: block;
+                margin-top: 7px;
+                box-sizing: border-box;
+                width: 80%;
+                padding: 20px 10px;
+                border: 2px solid #25cd89;
+                border-radius: 10px;
+                color: #FFF;
+                outline: 0;
+                font-size: 14px;
+                background-color: #02044a;
+    
+            }
+        }
+
+        button {
+            padding: 15px 10px
+        }
+
+        h1 {
+            font-size: 22px
+        }
+    }
 `;

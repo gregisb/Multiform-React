@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+@media only screen and (min-width: 800px) {
+    max-width: 100%;
+
+}
+
     p {
         font-size: 13px;
         color: #b8b8d4;
@@ -34,6 +39,11 @@ export const Container = styled.div`
             outline: 0;
             font-size: 15px;
             background-color: #02044a;
+
+            @media only screen and (min-width: 600px) {
+                padding: 15px 8px;
+                
+            }
 
         }
     }

@@ -59,4 +59,40 @@ export const Container = styled.div`
         padding: 20px 40px;
         color: #b8b8d4;
     }
+
+    @media only screen and (max-width: 600px) {
+        margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+
+        h1 {
+            font-size: 22px
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        hr {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #25cd89;
+            color: #FFF;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 20px 30px;
+            border: 0;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 15px;
+
+         
+            
+        
+    }    
+        
+    
 `;
